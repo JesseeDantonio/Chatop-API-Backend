@@ -25,12 +25,14 @@ public class AuthController {
 
     // Inscription
     @PostMapping("/register")
-    public ResponseEntity<TokenDTO> register(@RequestBody UserCreateDTO userCreateDTO) {
+    public ResponseEntity<?> register(@RequestBody UserCreateDTO userCreateDTO) {
         try {
             TokenDTO tokens = authService.register(userCreateDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(tokens);
         } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+            return ResponseEntity
+                    .status(HttpStatus.UNAUTHORIZED)
+                    .body(Collections.singletonMap("L'identification a échouée.", e.getMessage()));
         }
     }
 
@@ -54,6 +56,7 @@ public class AuthController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         try {
             String email = authentication.getName();
+            System.out.println(authentication.getCredentials());
             UserDTO user = authService.me(email);
             return ResponseEntity.ok(user);
         } catch (RuntimeException e) {
