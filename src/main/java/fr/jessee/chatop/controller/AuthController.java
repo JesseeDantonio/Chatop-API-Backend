@@ -5,18 +5,19 @@ import fr.jessee.chatop.dto.in.auth.UserAuthDTO;
 import fr.jessee.chatop.dto.out.UserDTO;
 import fr.jessee.chatop.dto.out.auth.TokenDTO;
 import fr.jessee.chatop.service.AuthService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.Collections;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
+@Tag(name = "Authentification", description = "Opérations sur l'authentification")
 public class AuthController {
     private final AuthService authService;
     public AuthController(AuthService authService) {

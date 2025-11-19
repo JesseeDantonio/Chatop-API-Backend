@@ -3,6 +3,7 @@ package fr.jessee.chatop.controller;
 import fr.jessee.chatop.dto.in.UserCreateDTO;
 import fr.jessee.chatop.dto.out.UserDTO;
 import fr.jessee.chatop.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
+@Tag(name = "Utilisateur", description = "Opérations sur les utilisateurs")
 public class UserController {
     private final UserService userService;
     // Route GET /api/users

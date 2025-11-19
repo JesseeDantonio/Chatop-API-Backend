@@ -4,12 +4,14 @@ import fr.jessee.chatop.dto.in.MessageCreateDTO;
 import fr.jessee.chatop.dto.out.MessageDTO;
 import fr.jessee.chatop.entity.MessageEntity;
 import fr.jessee.chatop.service.MessageService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/messages")
+@Tag(name = "Message", description = "Opérations sur les messages des utilisateurs")
 public class MessageController {
     private final MessageService messageService;
     // Route GET /api/messages
@@ -41,12 +43,6 @@ public class MessageController {
     @PostMapping
     public MessageCreateDTO createMessage(@RequestBody MessageCreateDTO message) {
         return messageService.createMessage(message);
-    }
-
-    @PutMapping("/{id}")
-    public MessageDTO updateMessage(@PathVariable Integer id, @RequestBody MessageDTO message) {
-        messageService.updateMessage(id, message);
-        return message;
     }
 
     @DeleteMapping("/{id}")
