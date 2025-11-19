@@ -3,6 +3,7 @@ package fr.jessee.chatop.controller;
 import fr.jessee.chatop.dto.in.RentalCreateDTO;
 import fr.jessee.chatop.dto.out.RentalDTO;
 import fr.jessee.chatop.service.RentalService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/rentals")
+@Tag(name = "Location", description = "Opérations sur les locations immobilières")
 public class RentalController {
     private final RentalService rentalService;
 
