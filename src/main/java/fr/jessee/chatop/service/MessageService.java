@@ -76,18 +76,6 @@ public class MessageService {
         return message;
     }
 
-    public MessageDTO updateMessage(Integer id, MessageDTO message) {
-        MessageEntity existingMessage = messageRepository.findById(id).orElse(null);
-        if (existingMessage != null) {
-            existingMessage.setMessage(message.getMessage());
-            existingMessage.setUpdatedAt(LocalDate.now().toString());
-            messageRepository.save(existingMessage);
-            return toDTO(existingMessage);
-        } else {
-            return null;
-        }
-    }
-
     public void deleteMessage(Integer id) {
         messageRepository.deleteById(id);
     }
