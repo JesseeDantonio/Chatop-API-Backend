@@ -18,12 +18,12 @@ Cette API REST expose toutes les fonctionnalités métier nécessaires au front-
 ## 🧱 Stack technique
 
 | Couche     | Outils / Frameworks                     |
-|------------|------------------------------------------|
-| Langage    | Java 21                                  |
-| Framework  | Spring Boot (Web, Data JPA, Validation)  |
-| Base de données | H2 (dev) / MySQL (prod)             |
-| Packaging  | Maven / Docker                           |
-| Documentation | Springdoc OpenAPI / Swagger UI        |
+|------------|-----------------------------------------|
+| Langage    | Java 21                                 |
+| Framework  | Spring Boot (Web, Data JPA, Validation) |
+| Base de données | H2 (dev) / MySQL (prod)                 |
+| Packaging  | Gradle / Docker                         |
+| Documentation | Springdoc OpenAPI / Swagger UI          |
 
 ---
 
