@@ -29,7 +29,7 @@ Cette API REST expose toutes les fonctionnalités métier nécessaires au front-
 
 ## 📦 Prérequis
 
-- **Java 21** + **Maven 3.9+**
+- **Java 21** + **Gradle**
 - **Docker & Docker Compose** (pour lancer les services auxiliaires)
 - **IDE** : IntelliJ IDEA (recommandé) ou VS Code
 - **Postman / HTTPie** pour tester l’API
